@@ -1,53 +1,21 @@
 <script>
-	import Header from './Header.svelte';
-	import './styles.css';
+	import './styles.css'
+	import GradientBall from '../components/GradientBall.svelte'
 </script>
 
-<div class="app">
-	<Header />
+<svelte:head>
+	<title>Motion Coach</title>
+	<meta
+		name="description"
+		content="Projeto Final PDI - Motion Coach" />
+</svelte:head>
 
-	<main>
+<div class="relative w-full h-full">
+	<div class="relative z-[1] w-full h-full">
 		<slot />
-	</main>
+	</div>
 
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
+	<GradientBall className="left-[0] top-[0px] h-[1500px] w-[1398px]" />
+	<GradientBall className="left-[-900px] top-[-300px] h-[1500px] w-[1398px]" />
+	<GradientBall className="left-[800px] top-[500px] h-[1700px] w-[1800px]" />
 </div>
-
-<style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
-</style>
